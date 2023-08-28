@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>🙍‍♂  Users️</h1>
+
+    <div id="user-list-wrapper"
+         hx-get="{{ '/users/list/' ~ page }}"
+         hx-trigger="load"
+         hx-target="#user-list"
+         hx-swap="outerHTML"
+    >
+        <div id="user-list">
+
+        </div>
+    </div>
+
+</div>
+<button id="user-list-wrapper"
+    hx-get="{{ '/users/list/' ~ page }}"
+    hx-target="#user-list"
+    hx-swap="outerHTML"
+    hx-replace-url="true"
+>get list !</button>
+{% endblock %}
